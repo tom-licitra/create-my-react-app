@@ -1,0 +1,48 @@
+{
+  "name": "labor-tracker",
+  "version": "1.0.0",
+  "description": "Restaurant Labor Tracking Tool",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "bootstrap": "^4.1.3",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "jquery": "^3.3.1",
+    "jwt-simple": "^0.5.5",
+    "pg": "^7.4.3",
+    "popper.js": "^1.14.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^4.38.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1",
+    "redux-logger": "^3.0.6"
+  },
+  "scripts": {
+    "postinstall": "npm run webpack",
+    "start": "node server/index.js",
+    "webpack": "./node_modules/webpack/bin/webpack.js",
+    "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/labor-tracker nodemon server/index.js --ignore src/ --ignore dist"
+  }
+}
